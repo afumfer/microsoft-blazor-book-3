@@ -35,8 +35,8 @@ namespace SerializationOptions
         SomeProperty = "Demo"
       };
 
-      string json = JsonSerializer.Serialize(demo);
-      // string json = JsonSerializer.Serialize(demo, options);
+      // string json = JsonSerializer.Serialize(demo);
+      string json = JsonSerializer.Serialize(demo, options);
       Console.WriteLine(json);
     }
   }

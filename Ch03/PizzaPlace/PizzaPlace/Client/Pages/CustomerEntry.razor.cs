@@ -31,6 +31,6 @@ namespace PizzaPlace.Client.Pages
 
     private InputWatcher inputWatcher = default!;
 
-    bool isInvalid = true;
+    bool isInvalid = false;
   }
 }

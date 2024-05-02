@@ -14,5 +14,8 @@ namespace Components.Advanced.Shared
     public int TemperatureF
       => TemperatureC > 0 ? 32 + (int)(TemperatureC / 0.5556)
                           : throw new DivideByZeroException();
+
+    //public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+
   }
 }

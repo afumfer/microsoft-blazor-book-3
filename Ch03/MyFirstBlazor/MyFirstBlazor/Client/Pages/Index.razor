@@ -4,40 +4,41 @@
 
 <h1>Hello, world!</h1>
 
-<Alert Show="@ShowAlert">
+@* <Alert Show="@ShowAlert">
   <span class="oi oi-check mr-2" aria-hidden="true"></span>
   <strong>Blazor is so cool!</strong>
-</Alert>
+</Alert> *@
 
-<DismissableAlert Show="@ShowAlert">
+@* <DismissibleAlert Show="@ShowAlert">
   <span class="oi oi-check mr-2" aria-hidden="true"></span>
   <strong>Blazor is so cool!</strong>
-</DismissableAlert>
+</DismissibleAlert> *@
 
 
-<DismissibleAlert @bind-Show="ShowAlert" @ref="alert">
+@* <DismissibleAlert @bind-Show="ShowAlert" @ref="alert">
   <span class="oi oi-check mr-2" aria-hidden="true"></span>
   <strong>Blazor is so cool!</strong>
-</DismissibleAlert>
+</DismissibleAlert> *@
 
-<button @onclick="ToggleAlert" class="btn btn-success">Toggle</button>
+@* <button @onclick="ToggleAlert" class="btn btn-success">Toggle</button> *@
 
-@*<Timer TimeInSeconds="5" Tick="ToggleAlert"/>*@
-<Timer TimeInSeconds="5" Tick="() => alert!.Dismiss()" />
+@* <Timer TimeInSeconds="5" Tick="ToggleAlert"/> *@
 
-<GrandMother>
+@* <Timer TimeInSeconds="5" Tick="() => alert!.Dismiss()" /> *@
+
+@* <GrandMother>
   <GrandChild />
   <DismissibleAlert Show="true">
     <GrandChild />
   </DismissibleAlert>
-</GrandMother>
+</GrandMother> *@
 
 <LifeCycle Counter="@counter" />
 
-<MyInput maxlength="100" placeholder="Placeholder"
-         required="true" Size="100" contextmenu="5"></MyInput>
+@*<MyInput maxlength="100" placeholder="Placeholder"
+         required="true" Size="100" contextmenu="5"></MyInput>*@
 
-<button class="btn btn-primary" @onclick="Increment">Increment</button>
+<button class="btn btn-primary" @onclick="Increment">Increment</button> 
 
 @code {
   public bool ShowAlert { get; set; } = true;
@@ -46,7 +47,7 @@
   {
     Console.WriteLine("*** Toggle ***");
     ShowAlert = !ShowAlert;
-    StateHasChanged();
+    //StateHasChanged();
 
     //alert.Dismiss();
   }

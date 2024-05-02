@@ -22,8 +22,8 @@
     @onkeypress="KeyHandler"
     @onkeypress:preventDefault />
   *@
-  <input type="number" @bind="@increment" @bind:event="oninput" />
-
+    <input type="number" @bind="@increment" @bind:event="oninput" />
+    <input type="number" @bind="@increment" @bind:event="oninput" />
 </p>
 
 @* Using the longer syntax *@
@@ -74,24 +74,24 @@
   private bool shouldPreventDefault = true;
   private DateTime Today { get; set; } = DateTime.Now;
 
-  private void IncrementCount()
-  {
-    currentCount++;
-    // This will output "++" to the browser's console
-    Console.WriteLine("++");
-  }
+  // private void IncrementCount()
+  // {
+  //   currentCount++;
+  //   // This will output "++" to the browser's console
+  //   Console.WriteLine("++");
+  // }
 
-  //private void IncrementCount(MouseEventArgs e)
-  //{
-  //  if (e.CtrlKey)
-  //  {
-  //    currentCount -= increment;
-  //  }
-  //  else
-  //  {
-  //    currentCount += increment;
-  //  }
-  //}
+  private void IncrementCount(MouseEventArgs e)
+  {
+   if (e.CtrlKey)
+   {
+     currentCount -= increment;
+   }
+   else
+   {
+     currentCount += increment;
+   }
+  }
 
   private string outerPos = "Nothing yet";
   private void OuterMouseMove(MouseEventArgs e)
@@ -119,16 +119,17 @@
   private void AutoIncrement()
   {
     var timer = new System.Threading.Timer(
-    callback: (_) =>
-    {
-      IncrementCount();
-      StateHasChanged();
-    },
-  state:
-    null,
-  dueTime:
-    TimeSpan.FromSeconds(1),
-  period:
-    TimeSpan.FromSeconds(1));
+      callback: (_) =>
+      {
+        IncrementCount(new MouseEventArgs());
+        StateHasChanged();
+      },
+      state:
+        null,
+      dueTime:
+        TimeSpan.FromSeconds(1),
+      period:
+        TimeSpan.FromSeconds(1)
+    );
   }
 }

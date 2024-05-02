@@ -63,7 +63,7 @@ namespace Testing.ComponentTests
                   .Add(counter => counter.CurrentCountChanged, () => nrOfCurrentCountChanged++)
                   .Add(counter => counter.IncrementChanged, () => nrOfIncrementChanged++)
       );
-      cut.Find("button").Click();
+      cut.Find("button").Click();      
       cut.Instance.Increment = 2;
       nrOfCurrentCountChanged.Should().Be(1);
       nrOfIncrementChanged.Should().Be(1);

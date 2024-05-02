@@ -24,9 +24,9 @@
 
     public async ValueTask<(List<Measurement>, int)> GetMeasurementsPage(int from, int count, CancellationToken cancellationToken)
     {
-      const int maxMeasurements = 5000;
+      const int maxMeasurements = 50000;
       // Start Add delay
-      const int delay = 50;
+      const int delay = 500;
       await Task.Delay(delay, cancellationToken);
       // End Add delay
       var result = new List<Measurement>();

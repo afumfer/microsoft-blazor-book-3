@@ -6,7 +6,7 @@
     {
       checked
       {
-        return i*i;
+        return i * i;
       }
     }
   }
